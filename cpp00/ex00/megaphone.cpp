@@ -6,7 +6,7 @@
 /*   By: eelaine <eelaine@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/08 15:54:38 by eelaine           #+#    #+#             */
-/*   Updated: 2025/05/08 16:04:11 by eelaine          ###   ########.fr       */
+/*   Updated: 2025/05/30 11:41:35 by eelaine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ int	main(int ac, char **av) {
 				std::cout << (char)std::toupper(av[i][j]);
 			}
 		}
+		std::cout << "\n";
 	}
 	return (0);
 }
