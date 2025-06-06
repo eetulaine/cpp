@@ -1,27 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.cpp                                         :+:      :+:    :+:   */
+/*   HumanA.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: eelaine <eelaine@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/30 13:46:54 by eelaine           #+#    #+#             */
-/*   Updated: 2025/06/03 15:10:16 by eelaine          ###   ########.fr       */
+/*   Created: 2025/06/06 13:40:15 by eelaine           #+#    #+#             */
+/*   Updated: 2025/06/06 15:01:39 by eelaine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#pragma once
 
-Zombie::Zombie() {}
+#include "Weapon.hpp"
 
-Zombie::~Zombie() {
-	std::cout << "Zombie " << name_ << " destroyed\n";
-}
+class HumanA {
 
-void Zombie::announce() {
-	std::cout << name_ << ": BraiiiiiiinnnzzzZ...\n";
-}
+	private:
+		Weapon &weapon_;
+		std::string name_;
 
-void Zombie::setName(std::string name, int i) {
-	this->name_ = name + " " + std::to_string(i);
-}
+	public:
+		void attack();
+		HumanA(std::string name, Weapon &weapon);
+};
