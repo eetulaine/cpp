@@ -6,7 +6,7 @@
 /*   By: eelaine <eelaine@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/27 10:44:19 by eelaine           #+#    #+#             */
-/*   Updated: 2025/05/27 12:13:50 by eelaine          ###   ########.fr       */
+/*   Updated: 2025/06/18 11:00:46 by eelaine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,27 +25,27 @@ Contact::~Contact() {
 }
 
 std::string Contact::getFirstName() {
-	return (firstName_);
+	return firstName_;
 }
 
 std::string Contact::getLastName() {
-	return (lastName_);
+	return lastName_;
 }
 
 std::string Contact::getNickname() {
-	return (nickname_);
+	return nickname_;
 }
 
 std::string Contact::getPhoneNumber() {
-	return (phoneNumber_);
+	return phoneNumber_;
 }
 
 std::string Contact::getDarkestSecret() {
-	return (darkestSecret_);
+	return darkestSecret_;
 }
 
 std::string Contact::getIndex() {
-	return (index_);
+	return index_;
 }
 
 void	Contact::setFirstName(std::string firstName) {
