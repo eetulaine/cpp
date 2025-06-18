@@ -6,7 +6,7 @@
 /*   By: eelaine <eelaine@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/16 10:15:41 by eelaine           #+#    #+#             */
-/*   Updated: 2025/05/27 11:39:25 by eelaine          ###   ########.fr       */
+/*   Updated: 2025/06/10 11:49:07 by eelaine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,13 @@ int	main() {
 	std::string	input;
 
 	while (42) {
+
+		std::cout << "Please use ADD, SEARCH or EXIT\n";
 		std::getline(std::cin, input);
 		if (std::cin.eof())
-			return (1);
+			return 1;
 		else if (input == "EXIT")
-			exit (0);
+			return 1;
 		else if (input == "ADD")
 			phonebook.addContact();
 		else if (input == "SEARCH")
@@ -29,8 +31,8 @@ int	main() {
 		else if (input == "")
 			continue ;
 		else
-			std::cout << "Please use ADD, SEARCH or EXIT\n";
+			std::cout << "Invalid command\n";
 		input = "";
 	}
-	return (0);
+	return 0;
 }
