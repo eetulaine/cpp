@@ -6,12 +6,13 @@
 /*   By: eelaine <eelaine@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/06 15:26:18 by eelaine           #+#    #+#             */
-/*   Updated: 2025/06/10 16:01:44 by eelaine          ###   ########.fr       */
+/*   Updated: 2025/06/18 11:23:17 by eelaine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include <fstream>
+#include <sstream>
 
 static void	checkArgCount(int ac) {
 
@@ -32,25 +33,21 @@ static void	checkEmptyString(const std::string& infile, const std::string& s1, c
 std::string copyFile(const std::string& infile) {
 
 	std::ifstream file(infile, std::ios::binary);
-    if (!file) {
+    if (!file.is_open()) {
         throw std::runtime_error("Can't open file: " + infile);
     }
 	file.exceptions(std::ofstream::failbit | std::ofstream::badbit);
-	std::string contents;
+	std::stringstream buffer;
 	try {
-		file.seekg(0, std::ios::end);
-		std::streamsize size = file.tellg();
-		file.seekg(0, std::ios::beg);
-		contents.reserve(size);
-		contents.assign(std::istreambuf_iterator<char>(file), std::istreambuf_iterator<char>());
-		if (file.bad()) {
-			throw std::runtime_error("Error reading file");
-		}
-	}
-	catch (const std::exception& e) {
-		throw std::runtime_error("File read error: " + std::string(e.what()));
-	}
-	return contents;
+		buffer << file.rdbuf(); 
+	} catch (const std::ios_base::failure& e) {
+		throw std::runtime_error("File I/O error during read: " + std::string(e.what()));
+	} catch (const std::bad_alloc& e) {
+		throw std::runtime_error("Memory allocation error while reading file: " + std::string(e.what()));
+	} catch (const std::exception& e) {
+		throw std::runtime_error("An unexpected error occurred during file read: " + std::string(e.what()));
+ 	}
+	return buffer.str();
 }
 
 static void createReplace(const std::string& newFilename, const std::string& content) {
@@ -62,8 +59,7 @@ static void createReplace(const std::string& newFilename, const std::string& con
 	file.exceptions(std::ofstream::failbit | std::ofstream::badbit);
 	try {
 		file << content;
-	}
-	catch (const std::exception& e) {
+	} catch (const std::exception& e) {
 		throw std::runtime_error("Error while writing: " + std::string(e.what()));
 	}
 }
