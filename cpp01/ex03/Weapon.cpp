@@ -6,7 +6,7 @@
 /*   By: eelaine <eelaine@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/06 14:52:39 by eelaine           #+#    #+#             */
-/*   Updated: 2025/06/06 14:57:34 by eelaine          ###   ########.fr       */
+/*   Updated: 2025/06/18 11:30:32 by eelaine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	Weapon::setType(std::string type) {
 }
 
 const	std::string &Weapon::getType() {
-	return (this->type_);
+	return this->type_;
 }
 
 Weapon::Weapon(std::string type) {
