@@ -6,7 +6,7 @@
 /*   By: eelaine <eelaine@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/06 15:26:18 by eelaine           #+#    #+#             */
-/*   Updated: 2025/06/06 17:01:26 by eelaine          ###   ########.fr       */
+/*   Updated: 2025/06/10 16:01:44 by eelaine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 static void	checkArgCount(int ac) {
 
 	if (ac != 4) {
-		std::cerr << "Invalid number of arguments\n";
+		std::cerr << "Error: Invalid number of arguments\n";
 		exit (1);
 	}
 }
@@ -24,7 +24,7 @@ static void	checkArgCount(int ac) {
 static void	checkEmptyString(const std::string& infile, const std::string& s1, const std::string& s2) {
 
 	if (infile.empty() || s1.empty() || s2.empty()) {
-		std::cerr << "Empty arguments\n";
+		std::cerr << "Error: Empty argument(s)\n";
 		exit (1);
 	}
 }
@@ -33,9 +33,9 @@ std::string copyFile(const std::string& infile) {
 
 	std::ifstream file(infile, std::ios::binary);
     if (!file) {
-        throw std::runtime_error("Cannot open file: " + infile);
+        throw std::runtime_error("Can't open file: " + infile);
     }
-    file.exceptions(std::ifstream::badbit);
+	file.exceptions(std::ofstream::failbit | std::ofstream::badbit);
 	std::string contents;
 	try {
 		file.seekg(0, std::ios::end);
@@ -54,8 +54,18 @@ std::string copyFile(const std::string& infile) {
 }
 
 static void createReplace(const std::string& newFilename, const std::string& content) {
+
 	std::ofstream file(newFilename);
-	if ()
+	if (!file) {
+		throw std::runtime_error("Error creating .replace file: " + newFilename);
+	}
+	file.exceptions(std::ofstream::failbit | std::ofstream::badbit);
+	try {
+		file << content;
+	}
+	catch (const std::exception& e) {
+		throw std::runtime_error("Error while writing: " + std::string(e.what()));
+	}
 }
 
 int	main(int ac, char **av) {
@@ -70,7 +80,7 @@ int	main(int ac, char **av) {
 	try {
 		copiedFile = copyFile(av[1]);
 		if (copiedFile.empty()) {
-			std::cerr << "Empty infile\n";
+			std::cerr << "Error: empty infile\n";
 			return 1;
 		}
 	}
