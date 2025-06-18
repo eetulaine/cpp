@@ -6,7 +6,7 @@
 /*   By: eelaine <eelaine@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/08 15:54:38 by eelaine           #+#    #+#             */
-/*   Updated: 2025/05/30 11:41:35 by eelaine          ###   ########.fr       */
+/*   Updated: 2025/06/18 11:00:03 by eelaine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,5 +23,5 @@ int	main(int ac, char **av) {
 		}
 		std::cout << "\n";
 	}
-	return (0);
+	return 0;
 }
