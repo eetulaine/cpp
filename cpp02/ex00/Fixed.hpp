@@ -6,7 +6,7 @@
 /*   By: eelaine <eelaine@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/10 15:23:35 by eelaine           #+#    #+#             */
-/*   Updated: 2025/06/13 11:48:59 by eelaine          ###   ########.fr       */
+/*   Updated: 2025/06/16 11:39:25 by eelaine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,15 +16,15 @@
 class Fixed {
 	
 	private:
-		int		raw_;
+		int		fixedPoint_;
 		static const int fractional_ = 8;
  
 	public:
 		Fixed();
-		Fixed(const Fixed& copy);
+		Fixed(const Fixed &copy);
 		~Fixed();
 		
 		int		getRawBits() const;
-		void	setRawBits(int const raw);
-		Fixed& operator = (const Fixed& copy);
+		void	setRawBits(int const fixedPoint);
+		Fixed	&operator = (const Fixed &copy);
 };
