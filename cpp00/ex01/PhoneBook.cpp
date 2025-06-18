@@ -6,7 +6,7 @@
 /*   By: eelaine <eelaine@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/19 09:57:37 by eelaine           #+#    #+#             */
-/*   Updated: 2025/06/10 13:16:05 by eelaine          ###   ########.fr       */
+/*   Updated: 2025/06/18 11:02:26 by eelaine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ static std::string	getInput(std::string msg) {
 		std::cout << msg;
 		if (std::getline(std::cin, input)) {
 			if (!input.empty() && !isWhitespaceOnly(input))
-				return (input);
+				return input;
 			std::cout << "Input empty. Please try again\n";
 		}
 		if (std::cin.eof())
