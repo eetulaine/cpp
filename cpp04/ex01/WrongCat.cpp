@@ -6,7 +6,7 @@
 /*   By: eelaine <eelaine@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/23 12:19:35 by eelaine           #+#    #+#             */
-/*   Updated: 2025/06/23 14:10:00 by eelaine          ###   ########.fr       */
+/*   Updated: 2025/06/25 10:52:35 by eelaine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ WrongCat::WrongCat() {
 	type_ = "WrongCat";
 }
 
-WrongCat::WrongCat(const WrongCat &copy) {
+WrongCat::WrongCat(const WrongCat &copy) : WrongAnimal(copy) {
 	std::cout << "WrongCat copy constructor called\n";
 	type_ = copy.type_;
 }
