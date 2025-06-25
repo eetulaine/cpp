@@ -6,7 +6,7 @@
 /*   By: eelaine <eelaine@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/23 11:06:17 by eelaine           #+#    #+#             */
-/*   Updated: 2025/06/23 15:40:23 by eelaine          ###   ########.fr       */
+/*   Updated: 2025/06/25 10:38:51 by eelaine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,5 +26,6 @@ class Cat : public Animal {
 		~Cat() override;
 
 		void makeSound() const override;
-
+		void setIdea(unsigned int n, std::string idea);
+		std::string getIdea(unsigned int n);
 };
