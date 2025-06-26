@@ -6,7 +6,7 @@
 /*   By: eelaine <eelaine@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/16 10:15:41 by eelaine           #+#    #+#             */
-/*   Updated: 2025/06/10 11:49:07 by eelaine          ###   ########.fr       */
+/*   Updated: 2025/06/26 10:25:24 by eelaine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,6 @@ int	main() {
 			continue ;
 		else
 			std::cout << "Invalid command\n";
-		input = "";
 	}
 	return 0;
 }
