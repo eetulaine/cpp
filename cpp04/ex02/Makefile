@@ -1,4 +1,4 @@
-NAME =  ideas
+NAME =  abstract
 
 SRCS =	main.cpp \
 		AAnimal.cpp \
