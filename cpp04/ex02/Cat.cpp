@@ -6,15 +6,16 @@
 /*   By: eelaine <eelaine@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/23 12:04:15 by eelaine           #+#    #+#             */
-/*   Updated: 2025/06/25 11:46:09 by eelaine          ###   ########.fr       */
+/*   Updated: 2025/06/26 09:44:38 by eelaine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cat.hpp"
 #include "Brain.hpp"
 
-Cat::Cat() : AAnimal("Cat") {
+Cat::Cat() {
 	std::cout << "Cat default constructor called\n";
+	type_ = "Cat";
 	brain_ = new Brain();
 }
 
@@ -26,7 +27,7 @@ Cat::Cat(const Cat &copy) : AAnimal(copy) {
 Cat& Cat::operator=(const Cat &other) {
 	std::cout << "Cat copy assignment operator called\n";
 	if (this != &other) {
-		AAnimal::operator=(other);
+		//AAnimal::operator=(other);
 		delete brain_;
 		brain_ = new Brain(*other.brain_);
 	}
