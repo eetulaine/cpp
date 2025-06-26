@@ -6,15 +6,16 @@
 /*   By: eelaine <eelaine@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/23 12:04:15 by eelaine           #+#    #+#             */
-/*   Updated: 2025/06/25 10:55:40 by eelaine          ###   ########.fr       */
+/*   Updated: 2025/06/26 09:45:24 by eelaine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cat.hpp"
 #include "Brain.hpp"
 
-Cat::Cat() : Animal("Cat") {
+Cat::Cat() {
 	std::cout << "Cat default constructor called\n";
+	type_ = "Cat";
 	brain_ = new Brain();
 }
 
