@@ -6,7 +6,7 @@
 /*   By: eelaine <eelaine@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/26 11:58:25 by eelaine           #+#    #+#             */
-/*   Updated: 2025/06/26 15:08:33 by eelaine          ###   ########.fr       */
+/*   Updated: 2025/06/26 15:42:45 by eelaine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,6 @@ void Bureaucrat::decreaseGrade() {
 		grade_++;
 }
 
-
 std::string Bureaucrat::getName() const {
 	return name_;
 }
@@ -65,4 +64,5 @@ unsigned int Bureaucrat::getGrade() const {
 
 std::ostream &operator<<(std::ostream &os, Bureaucrat &other) {
 	os << other.getName() << ", bureaucrat grade " << other.getGrade() << std::endl;
+	return os;
 }
