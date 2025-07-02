@@ -6,7 +6,7 @@
 /*   By: eelaine <eelaine@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/06 15:06:57 by eelaine           #+#    #+#             */
-/*   Updated: 2025/06/06 15:23:44 by eelaine          ###   ########.fr       */
+/*   Updated: 2025/07/02 12:32:54 by eelaine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,5 +20,5 @@ void HumanB::setWeapon(Weapon& weapon) {
 
 void HumanB::attack() {
 	if (weapon_)
-		std::cout << name_ << "  attacks with their " << weapon_->getType() << "\n";
+		std::cout << name_ << " attacks with their " << weapon_->getType() << "\n";
 }
