@@ -2,7 +2,7 @@ NAME = moar_brainz
 
 SRCS =	main.cpp \
 		Zombie.cpp \
-		ZombieHorde.cpp
+		zombieHorde.cpp
 OBJS = $(SRCS:.cpp=.o)
 
 CC = c++
