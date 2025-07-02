@@ -6,7 +6,7 @@
 /*   By: eelaine <eelaine@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/26 11:57:18 by eelaine           #+#    #+#             */
-/*   Updated: 2025/06/26 15:47:10 by eelaine          ###   ########.fr       */
+/*   Updated: 2025/07/02 14:09:21 by eelaine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int	main() {
 
 	try {
-		Bureaucrat Pekka("Pekka", 0);
+		Bureaucrat Pekka("Pekka", 7);
 	}
 	catch(const std::exception &e) {
 		std::cerr << e.what() << std::endl;
@@ -30,18 +30,20 @@ int	main() {
 
 	Bureaucrat Riitta("Riitta", 1);
 	try {
-		Riitta.increaseGrade();
+		Riitta.decreaseGrade(4);
+		std::cout << Riitta.getName() << "'s new grade: " << Riitta.getGrade() << "\n";
 	}
 	catch(const std::exception &e) {
 		std::cerr << e.what() << std::endl;
 	}
 
-	Bureaucrat Olli("Olli", -1);
+	Bureaucrat Olli("Olli", 4);
 	try {
-		Olli.decreaseGrade();
+		Olli.increaseGrade(-3);
+		std::cout << Olli.getName() << "'s new grade: " << Olli.getGrade() << "\n";
 	}
 	catch(const std::exception &e) {
-		std::cerr << e.what() << "\n";
+		std::cerr << e.what() << std::endl;
 	}
 
 	return 0;
