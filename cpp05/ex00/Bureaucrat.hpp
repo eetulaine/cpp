@@ -6,7 +6,7 @@
 /*   By: eelaine <eelaine@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/26 11:58:04 by eelaine           #+#    #+#             */
-/*   Updated: 2025/06/26 15:46:16 by eelaine          ###   ########.fr       */
+/*   Updated: 2025/07/02 15:01:37 by eelaine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,35 +18,40 @@ class Bureaucrat {
 	private:
 
 		const std::string name_;
-		unsigned int grade_;
+		int grade_;
 
 	public:
 	
 		Bureaucrat();
-		Bureaucrat(const std::string name, unsigned int grade);
+		Bureaucrat(const std::string name, int grade);
 		Bureaucrat(const Bureaucrat &copy);
 		Bureaucrat &operator=(const Bureaucrat &other);
 		~Bureaucrat();
 
-		void increaseGrade();
-		void decreaseGrade();
+		void increaseGrade(int amount);
+		void decreaseGrade(int amount);
 
 		std::string getName() const;
-		unsigned int getGrade() const;
+		int getGrade() const;
 
 		class GradeTooHighException : public std::exception {
 			public:
 				virtual const char *what() const noexcept {
-					return "Error: Bureaucrat's grade is too high\n";
+					return "Error: Bureaucrat's grade is too high";
 				}
 		};
-
 		class GradeTooLowException : public std::exception {
 			public:
 				virtual const char *what() const noexcept {
-					return "Error: Bureaucrat's grade is too low\n";
+					return "Error: Bureaucrat's grade is too low";
+				}
+		};
+		class GradeNegative : public std::exception {
+			public:
+				virtual const char *what() const noexcept {
+					return "Error: Bureaucrat's grade change negative";
 				}
 		};
 };
 
-std::ostream &operator<<(std::ostream &os, Bureaucrat &other);
+std::ostream &operator<<(std::ostream &os, const Bureaucrat &other);
