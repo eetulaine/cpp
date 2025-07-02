@@ -6,23 +6,22 @@
 /*   By: eelaine <eelaine@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/26 11:58:25 by eelaine           #+#    #+#             */
-/*   Updated: 2025/06/26 15:42:45 by eelaine          ###   ########.fr       */
+/*   Updated: 2025/07/02 15:01:42 by eelaine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 
-Bureaucrat::Bureaucrat() {
+Bureaucrat::Bureaucrat() : name_("Unknown"), grade_(150) {
 	std::cout << "New bureaucrat arrives to the office\n";
 }
 
-Bureaucrat::Bureaucrat(const std::string name, unsigned int grade) : name_(name) {
+Bureaucrat::Bureaucrat(const std::string name, int grade) : name_(name) {
 	if (grade > 150)
 		throw GradeTooLowException();
-	if (grade < 1)
+	else if (grade < 1)
 		throw GradeTooHighException();
-	else
-		grade_ = grade;
+	grade_ = grade;
 	std::cout << name_ << ", bureaucrat grade " << grade_ << "\n";
 }
 
@@ -35,34 +34,39 @@ Bureaucrat::Bureaucrat(const Bureaucrat &copy) : name_(copy.name_), grade_(copy.
 }
 
 Bureaucrat& Bureaucrat::operator=(const Bureaucrat &other) {
-	if (this != &other)
+	if (this != &other) {
 		grade_ = other.grade_;
+	}
 	return *this;
 }
 
-void Bureaucrat::increaseGrade() {
-	if (grade_ == 1)
+void Bureaucrat::increaseGrade(int amount) {
+	if (amount < 0)
+		throw GradeNegative();
+	if (grade_ - amount < 1)
 		throw GradeTooHighException();
 	else
-		grade_--;
+		grade_ -= amount;
 }
 
-void Bureaucrat::decreaseGrade() {
-	if (grade_ == 150)
+void Bureaucrat::decreaseGrade(int amount) {
+	if (amount < 0)
+		throw GradeNegative();
+	if (grade_ + amount > 150)
 		throw GradeTooLowException();
 	else
-		grade_++;
+		grade_ += amount;
 }
 
 std::string Bureaucrat::getName() const {
 	return name_;
 }
 
-unsigned int Bureaucrat::getGrade() const {
+int Bureaucrat::getGrade() const {
 	return grade_;
 }
 
-std::ostream &operator<<(std::ostream &os, Bureaucrat &other) {
+std::ostream &operator<<(std::ostream &os, const Bureaucrat &other) {
 	os << other.getName() << ", bureaucrat grade " << other.getGrade() << std::endl;
 	return os;
 }
