@@ -1,4 +1,4 @@
-NAME =	aform
+NAME =	28b
 
 SRCS =	main.cpp \
 		Bureaucrat.cpp \
