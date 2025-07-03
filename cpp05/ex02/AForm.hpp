@@ -6,7 +6,7 @@
 /*   By: eelaine <eelaine@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/03 14:07:34 by eelaine           #+#    #+#             */
-/*   Updated: 2025/07/03 14:56:06 by eelaine          ###   ########.fr       */
+/*   Updated: 2025/07/03 16:17:47 by eelaine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ class AForm {
 		bool signed_ = false;
 		const int signGrade_ = 10;
 		const int execGrade_ = 10;
+		virtual void formExecuted() const = 0;
 	
 	public:
 
@@ -65,6 +66,13 @@ class AForm {
 			public:
 				virtual const char* what() const noexcept {
 					return "Form already signed";
+				}
+		};
+		class FormNotSignedException : public std::exception
+		{
+			public:
+				virtual const char* what() const noexcept {
+					return "Form not signed and cannot be executed";
 				}
 		};
 };
