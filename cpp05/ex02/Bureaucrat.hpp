@@ -6,7 +6,7 @@
 /*   By: eelaine <eelaine@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/26 11:58:04 by eelaine           #+#    #+#             */
-/*   Updated: 2025/07/03 14:35:40 by eelaine          ###   ########.fr       */
+/*   Updated: 2025/07/03 14:58:20 by eelaine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,8 @@ class Bureaucrat {
 
 		std::string getName() const;
 		int getGrade() const;
+
+		void executeForm(const AForm &form);
 
 		class GradeTooHighException : public std::exception {
 			public:

@@ -6,7 +6,7 @@
 /*   By: eelaine <eelaine@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/02 14:14:23 by eelaine           #+#    #+#             */
-/*   Updated: 2025/07/03 14:12:58 by eelaine          ###   ########.fr       */
+/*   Updated: 2025/07/03 15:36:51 by eelaine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,8 +43,16 @@ AForm& AForm::operator=(const AForm &other) {
 
 void AForm::beSigned(const Bureaucrat &bureaucrat) {
 	if (signed_)
-		throw AFormAlreadySignedException();
+		throw FormAlreadySignedException();
 	if (bureaucrat.getGrade() > signGrade_)
+		throw GradeTooLowException();
+	signed_ = true;
+}
+
+void AForm::execute(const Bureaucrat &executor) const {
+	if (signed_)
+		throw FormAlreadySignedException();
+	if (executor.getGrade() > signGrade_)
 		throw GradeTooLowException();
 	signed_ = true;
 }

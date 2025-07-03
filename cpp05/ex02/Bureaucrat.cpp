@@ -6,7 +6,7 @@
 /*   By: eelaine <eelaine@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/26 11:58:25 by eelaine           #+#    #+#             */
-/*   Updated: 2025/07/03 14:10:33 by eelaine          ###   ########.fr       */
+/*   Updated: 2025/07/03 15:03:12 by eelaine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,14 +58,6 @@ void Bureaucrat::decreaseGrade(int amount) {
 		grade_ += amount;
 }
 
-std::string Bureaucrat::getName() const {
-	return name_;
-}
-
-int Bureaucrat::getGrade() const {
-	return grade_;
-}
-
 void Bureaucrat::signForm(AForm &form) {
 	try {
 		form.beSigned(*this);
@@ -73,6 +65,23 @@ void Bureaucrat::signForm(AForm &form) {
 	} catch (std::exception &e) {
 		std::cout << getName() << " couldn't sign " << form.getName() << " because " << e.what() << std::endl;
 	}
+}
+
+void Bureaucrat::executeForm(const AForm &form) {
+	try {
+		form.execute(*this);
+		std::cout << getName() << " executed " << form.getName() << "\n";
+	} catch (std::exception &e) {
+		std::cout << getName() << " couldn't execute " << form.getName() << " because " << e.what() << std::endl;
+	}
+}
+
+std::string Bureaucrat::getName() const {
+	return name_;
+}
+
+int Bureaucrat::getGrade() const {
+	return grade_;
 }
 
 std::ostream &operator<<(std::ostream &os, const Bureaucrat &other) {

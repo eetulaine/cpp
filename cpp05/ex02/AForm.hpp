@@ -6,7 +6,7 @@
 /*   By: eelaine <eelaine@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/03 14:07:34 by eelaine           #+#    #+#             */
-/*   Updated: 2025/07/03 14:35:25 by eelaine          ###   ########.fr       */
+/*   Updated: 2025/07/03 14:56:06 by eelaine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ class Bureaucrat;
 class AForm {
 	
 	private:
+
 		const std::string name_ = "Default form";
 		bool signed_ = false;
 		const int signGrade_ = 10;
@@ -38,17 +39,19 @@ class AForm {
 		
 		void beSigned(const Bureaucrat &bureaucrat);
 		bool isSigned() const;
+
+		void execute(const Bureaucrat &executor) const;
 		
 		class GradeTooHighException : public std::exception {
 			public:
 				virtual const char *what() const noexcept {
-					return "grade needed for AForm is too high";
+					return "grade needed for form is too high";
 				}
 		};
 		class GradeTooLowException : public std::exception {
 			public:
 				virtual const char *what() const noexcept {
-					return "grade needed for AForm is too low";
+					return "grade needed for form is too low";
 				}
 		};
 		class GradeNegative : public std::exception {
@@ -57,11 +60,11 @@ class AForm {
 					return "bureaucrat's grade is negative";
 				}
 		};
-		class AFormAlreadySignedException : public std::exception
+		class FormAlreadySignedException : public std::exception
 		{
 			public:
 				virtual const char* what() const noexcept {
-					return "AForm already signed";
+					return "Form already signed";
 				}
 		};
 };
