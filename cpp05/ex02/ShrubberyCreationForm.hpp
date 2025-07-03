@@ -6,7 +6,25 @@
 /*   By: eelaine <eelaine@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/03 14:16:20 by eelaine           #+#    #+#             */
-/*   Updated: 2025/07/03 14:16:21 by eelaine          ###   ########.fr       */
+/*   Updated: 2025/07/03 14:43:59 by eelaine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#pragma once
+#include "AForm.hpp"
+
+class ShrubberyCreationForm : public AForm {
+	
+	private:
+	
+		std::string target_;
+
+	public:
+
+		ShrubberyCreationForm();
+		ShrubberyCreationForm(std::string target);
+		~ShrubberyCreationForm();
+		ShrubberyCreationForm(const ShrubberyCreationForm &copy);
+		ShrubberyCreationForm &operator=(const ShrubberyCreationForm &other);
+		
+};
