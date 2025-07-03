@@ -6,12 +6,11 @@
 /*   By: eelaine <eelaine@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/03 14:16:20 by eelaine           #+#    #+#             */
-/*   Updated: 2025/07/03 14:46:33 by eelaine          ###   ########.fr       */
+/*   Updated: 2025/07/03 16:19:26 by eelaine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
-#include <iostream>
 #include "AForm.hpp"
 
 class ShrubberyCreationForm : public AForm {
@@ -28,4 +27,5 @@ class ShrubberyCreationForm : public AForm {
 		ShrubberyCreationForm(const ShrubberyCreationForm &copy);
 		ShrubberyCreationForm &operator=(const ShrubberyCreationForm &other);
 		
+		void formExecuted() const override;
 };
