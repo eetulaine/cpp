@@ -6,7 +6,7 @@
 /*   By: eelaine <eelaine@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/02 14:14:23 by eelaine           #+#    #+#             */
-/*   Updated: 2025/07/03 15:36:51 by eelaine          ###   ########.fr       */
+/*   Updated: 2025/07/03 16:17:03 by eelaine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,11 +50,11 @@ void AForm::beSigned(const Bureaucrat &bureaucrat) {
 }
 
 void AForm::execute(const Bureaucrat &executor) const {
-	if (signed_)
-		throw FormAlreadySignedException();
-	if (executor.getGrade() > signGrade_)
+	if (!isSigned())
+		throw FormNotSignedException();
+	if (executor.getGrade() > execGrade_)
 		throw GradeTooLowException();
-	signed_ = true;
+	formExecuted();
 }
 
 std::string AForm::getName() const {
