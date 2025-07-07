@@ -6,7 +6,7 @@
 /*   By: eelaine <eelaine@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/18 14:01:17 by eelaine           #+#    #+#             */
-/*   Updated: 2025/06/18 14:57:34 by eelaine          ###   ########.fr       */
+/*   Updated: 2025/07/07 12:40:43 by eelaine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,8 @@ void ScavTrap::attack(const std::string &target) {
 		std::cout << "ScavTrap " << name_ << " is dead and can't attack\n";
 	else if (energyPoints_ < 1)
 		std::cout << "ScavTrap " << name_ << " doesn't have enough energy to attack\n";
-	else
+	else {
 		std::cout << "ScavTrap " << name_ << " attacks " << target << " for " << attackDamage_ << " damage!\n";
+		energyPoints_--;
+	}
 }
