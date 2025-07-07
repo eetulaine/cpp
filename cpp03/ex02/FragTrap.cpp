@@ -6,7 +6,7 @@
 /*   By: eelaine <eelaine@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/18 15:28:11 by eelaine           #+#    #+#             */
-/*   Updated: 2025/06/18 15:37:05 by eelaine          ###   ########.fr       */
+/*   Updated: 2025/07/07 12:39:30 by eelaine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,8 @@ void FragTrap::attack(const std::string &target) {
 		std::cout << "FragTrap " << name_ << " is dead and can't attack\n";
 	else if (energyPoints_ < 1)
 		std::cout << "FragTrap " << name_ << " doesn't have enough energy to attack\n";
-	else
+	else {
 		std::cout << "FragTrap " << name_ << " attacks " << target << " for " << attackDamage_ << " damage!\n";
+		energyPoints_--;
+	}
 }
