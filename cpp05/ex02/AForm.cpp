@@ -6,7 +6,7 @@
 /*   By: eelaine <eelaine@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/02 14:14:23 by eelaine           #+#    #+#             */
-/*   Updated: 2025/07/03 16:17:03 by eelaine          ###   ########.fr       */
+/*   Updated: 2025/07/07 11:58:14 by eelaine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ AForm::~AForm() {
 
 AForm::AForm(const AForm &copy) : 
 	name_(copy.name_), signed_(copy.signed_), signGrade_(copy.signGrade_), execGrade_(copy.execGrade_) {
-	std::cout << "Copy contructor called for " << name_ << "\n";
+	std::cout << "Copy constructor called for " << name_ << "\n";
 }
 
 AForm& AForm::operator=(const AForm &other) {
