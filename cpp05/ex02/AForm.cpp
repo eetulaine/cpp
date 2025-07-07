@@ -6,14 +6,14 @@
 /*   By: eelaine <eelaine@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/02 14:14:23 by eelaine           #+#    #+#             */
-/*   Updated: 2025/07/07 11:58:14 by eelaine          ###   ########.fr       */
+/*   Updated: 2025/07/07 13:46:13 by eelaine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "AForm.hpp"
 
 AForm::AForm() {
-	std::cout << "New AForm ready to be signed\n";
+	std::cout << "New form ready to be signed\n";
 }
 
 AForm::AForm(const std::string name, int signGrade, int execGrade) : name_(name), signGrade_(signGrade), execGrade_(execGrade) {
@@ -26,7 +26,7 @@ AForm::AForm(const std::string name, int signGrade, int execGrade) : name_(name)
 }
 
 AForm::~AForm() {
-	std::cout << "AForm " << name_ << " shredded\n";
+	std::cout << "Form " << name_ << " shredded\n";
 }
 
 AForm::AForm(const AForm &copy) : 
