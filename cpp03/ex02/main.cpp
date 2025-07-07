@@ -6,7 +6,7 @@
 /*   By: eelaine <eelaine@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/18 14:01:11 by eelaine           #+#    #+#             */
-/*   Updated: 2025/06/18 15:34:38 by eelaine          ###   ########.fr       */
+/*   Updated: 2025/07/07 12:38:53 by eelaine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,9 @@ int main() {
 	frag.highFivesGuys();
 
 	ScavTrap scav2("Hank");
+	std::cout << frag.getEnergyPoints() << "\n";
 	frag.attack(scav2.getName());
+	std::cout << frag.getEnergyPoints() << "\n";
 
 	return 0;
 }
