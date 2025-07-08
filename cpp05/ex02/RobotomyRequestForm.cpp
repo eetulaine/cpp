@@ -6,7 +6,7 @@
 /*   By: eelaine <eelaine@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/03 14:16:13 by eelaine           #+#    #+#             */
-/*   Updated: 2025/07/07 13:13:40 by eelaine          ###   ########.fr       */
+/*   Updated: 2025/07/08 12:06:45 by eelaine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,9 @@
 
 RobotomyRequestForm::RobotomyRequestForm() : AForm("RobotomyRequestForm", 72, 45), target_("Default target") {}
 
-RobotomyRequestForm::RobotomyRequestForm(std::string target) : AForm("RobotomyRequestForm", 72, 45), target_(target) {}
+RobotomyRequestForm::RobotomyRequestForm(std::string target) : AForm("RobotomyRequestForm", 72, 45), target_(target) {
+	std::cout << "RobotomyRequestForm for " << target_ << " created\n";
+}
 
 RobotomyRequestForm::~RobotomyRequestForm() {
 	std::cout << "RobotomyRequestForm shredded..\n";
