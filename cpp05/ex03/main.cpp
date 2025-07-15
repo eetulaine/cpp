@@ -6,13 +6,14 @@
 /*   By: eelaine <eelaine@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/26 11:57:18 by eelaine           #+#    #+#             */
-/*   Updated: 2025/07/08 12:30:32 by eelaine          ###   ########.fr       */
+/*   Updated: 2025/07/15 12:03:59 by eelaine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PresidentialPardonForm.hpp"
 #include "ShrubberyCreationForm.hpp"
 #include "RobotomyRequestForm.hpp"
+#include "Intern.hpp"
 
 int	main() {
 
@@ -128,6 +129,37 @@ int	main() {
 
 		std::cout << "\nTesting file creation - check for 'home_shrubbery', 'office_shrubbery', and 'park_shrubbery' files\n";
 
+		std::cout << "\n=== INTERN TESTS ===\n";
+
+		std::cout << "\nCreating an intern..\n";
+		Intern someRandomIntern;
+
+		std::cout << "\nIntern creates a valid form.." << std::endl;
+		Intern intern;
+		AForm *form = intern.makeForm("PresidentialPardonForm", "Trump");
+		if (form) {
+		    std::cout << *form << std::endl;
+			std::cout << std::endl;
+		    delete form;
+		}
+
+		std::cout << "\nBureaucrat orders Intern to create, sign, and execute a PresidentialPardonForm...\n";
+		Intern intern2;
+		Bureaucrat highRankingGuy("Trump", 1);
+		std::cout << std::endl;
+
+		AForm *form2 = intern.makeForm("PresidentialPardonForm", "Oligarch");
+		std::cout << *form2 << std::endl;
+		std::cout << std::endl;
+
+		highRankingGuy.signForm(*form2);
+		std::cout << std::endl;
+
+		highRankingGuy.executeForm(*form2);
+		std::cout << std::endl;
+		delete form;
+
+		std::cout << "\n=== CLEANING.. ===\n\n";
     } catch (std::exception &e) {
         std::cout << "Something went wrong.. " << e.what() << std::endl;
 	}
