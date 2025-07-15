@@ -6,7 +6,7 @@
 /*   By: eelaine <eelaine@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/08 12:45:23 by eelaine           #+#    #+#             */
-/*   Updated: 2025/07/08 13:20:15 by eelaine          ###   ########.fr       */
+/*   Updated: 2025/07/15 11:50:23 by eelaine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,14 +34,14 @@ static AForm *makePres(const std::string target) {
 
 AForm* Intern::makeForm(std::string form, std::string target) {
 	
-	AForm *(*f[])(std::string target) = {&makeShrub, &makeRobo, &makePres};
+	AForm *(*makeFormFunc[])(std::string target) = {&makePres, &makeRobo, &makeShrub};
 
-	const std::string forms[3] = {"ShrubberyCreationForm", "RobotomyRequestForm", "PresidentialPardonForm"};
+	const std::string forms[3] = {"PresidentialPardonForm", "RobotomyRequestForm", "ShrubberyCreationForm"};
 	AForm *newForm = NULL;
 
 	for (int i = 0; i < 3; i++) {
 		if (form == forms[i]) {
-			newForm = f[i](target);
+			newForm = makeFormFunc[i](target);
 			break ;
 		}
 	}

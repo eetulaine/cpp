@@ -6,7 +6,7 @@
 /*   By: eelaine <eelaine@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/26 11:58:25 by eelaine           #+#    #+#             */
-/*   Updated: 2025/07/03 15:03:12 by eelaine          ###   ########.fr       */
+/*   Updated: 2025/07/15 12:01:28 by eelaine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ Bureaucrat::Bureaucrat(const std::string name, int grade) : name_(name) {
 }
 
 Bureaucrat::~Bureaucrat () {
-	std::cout << "Bureaucrat " << name_ << " got fired\n";
+	std::cout << "Bureaucrat " << name_ << " got fired..\n";
 }
 
 Bureaucrat::Bureaucrat(const Bureaucrat &copy) : name_(copy.name_), grade_(copy.grade_) {
