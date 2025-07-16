@@ -6,7 +6,7 @@
 /*   By: eelaine <eelaine@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/23 12:04:15 by eelaine           #+#    #+#             */
-/*   Updated: 2025/06/23 14:08:20 by eelaine          ###   ########.fr       */
+/*   Updated: 2025/07/16 15:52:30 by eelaine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ Cat::Cat(const Cat &copy) {
 Cat& Cat::operator=(const Cat &other) {
 	std::cout << "Cat copy assignment operator called\n";
 	if (this != &other) {
-		type_ = other.type_;
+		Animal::operator=(other);
 	}
 	return *this;
 }
