@@ -6,15 +6,18 @@
 /*   By: eelaine <eelaine@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/23 13:48:18 by eelaine           #+#    #+#             */
-/*   Updated: 2025/06/23 14:08:07 by eelaine          ###   ########.fr       */
+/*   Updated: 2025/07/24 16:07:39 by eelaine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Animal.hpp"
 
-Animal::Animal() {
+Animal::Animal() : type_("Animal") {
 	std::cout << "Animal default constructor called\n";
-	type_ = "Animal";
+}
+
+Animal::Animal(std::string type) : type_(type) {
+	std::cout << "Animal constructor called for " << type << "\n";
 }
 
 Animal::Animal(const Animal &copy) {

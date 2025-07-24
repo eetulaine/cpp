@@ -6,7 +6,7 @@
 /*   By: eelaine <eelaine@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/23 11:07:04 by eelaine           #+#    #+#             */
-/*   Updated: 2025/06/23 13:54:06 by eelaine          ###   ########.fr       */
+/*   Updated: 2025/07/24 15:52:22 by eelaine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ class Animal {
 
 	public:
 		Animal();
-		Animal(std::string name);
+		Animal(std::string type);
 		Animal(const Animal &copy);
 		Animal &operator=(const Animal &other);
 		virtual ~Animal();

@@ -6,20 +6,18 @@
 /*   By: eelaine <eelaine@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/23 12:04:15 by eelaine           #+#    #+#             */
-/*   Updated: 2025/07/16 15:52:30 by eelaine          ###   ########.fr       */
+/*   Updated: 2025/07/24 16:22:03 by eelaine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cat.hpp"
 
-Cat::Cat() {
+Cat::Cat() : Animal("Cat") {
 	std::cout << "Cat default constructor called\n";
-	type_ = "Cat";
 }
 
-Cat::Cat(const Cat &copy) {
+Cat::Cat(const Cat &copy) : Animal(copy) {
 	std::cout << "Cat copy constructor called\n";
-	type_ = copy.type_;
 }
 
 Cat& Cat::operator=(const Cat &other) {
