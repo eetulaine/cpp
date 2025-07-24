@@ -6,7 +6,7 @@
 /*   By: eelaine <eelaine@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/23 13:48:18 by eelaine           #+#    #+#             */
-/*   Updated: 2025/07/24 16:58:09 by eelaine          ###   ########.fr       */
+/*   Updated: 2025/07/24 17:33:18 by eelaine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ AAnimal::AAnimal() : type_("AAnimal") {
 }
 
 AAnimal::AAnimal(std::string type) : type_(type) {
-	std::cout << "Animal constructor called for " << type << "\n";
+	std::cout << "AAnimal constructor called for " << type << "\n";
 }
 
 AAnimal::AAnimal(const AAnimal &copy) {
