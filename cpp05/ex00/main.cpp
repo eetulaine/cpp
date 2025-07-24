@@ -6,13 +6,22 @@
 /*   By: eelaine <eelaine@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/26 11:57:18 by eelaine           #+#    #+#             */
-/*   Updated: 2025/07/02 14:09:21 by eelaine          ###   ########.fr       */
+/*   Updated: 2025/07/24 17:54:19 by eelaine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 
 int	main() {
+	{
+		std::cout << "\n\n=== ORTHODOX CANONICAL FORM TESTS ===\n\n";
+		
+		Bureaucrat a;
+		Bureaucrat b("Random Bureaucrat", 1);
+		Bureaucrat c(b);
+		std::cout << c.getName() << "\n";
+		std::cout << "\n\n";
+	}
 
 	try {
 		Bureaucrat Pekka("Pekka", 7);

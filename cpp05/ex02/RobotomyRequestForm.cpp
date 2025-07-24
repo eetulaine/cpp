@@ -6,7 +6,7 @@
 /*   By: eelaine <eelaine@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/03 14:16:13 by eelaine           #+#    #+#             */
-/*   Updated: 2025/07/08 12:06:45 by eelaine          ###   ########.fr       */
+/*   Updated: 2025/07/24 18:25:09 by eelaine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,14 +24,6 @@ RobotomyRequestForm::~RobotomyRequestForm() {
 }
 
 RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &copy) : AForm(copy), target_(copy.target_) {}
-
-RobotomyRequestForm& RobotomyRequestForm::operator=(const RobotomyRequestForm &other) {
-	if (this != &other) {
-		AForm::operator=(other);
-		target_ = other.target_;
-	}
-	return *this;
-}
 
 void RobotomyRequestForm::formExecuted() const {
 	

@@ -6,7 +6,7 @@
 /*   By: eelaine <eelaine@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/02 14:14:10 by eelaine           #+#    #+#             */
-/*   Updated: 2025/07/02 15:48:44 by eelaine          ###   ########.fr       */
+/*   Updated: 2025/07/24 18:29:29 by eelaine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ class Form {
 		Form(std::string name, int signGrade, int execGrade);
 		~Form();
 		Form(const Form &copy);
-		Form &operator=(const Form &other);
+		Form &operator=(const Form &other) = delete;
 	
 		std::string getName() const;
 		int getSignGrade() const;

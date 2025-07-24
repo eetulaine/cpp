@@ -6,7 +6,7 @@
 /*   By: eelaine <eelaine@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/03 14:07:34 by eelaine           #+#    #+#             */
-/*   Updated: 2025/07/08 12:03:43 by eelaine          ###   ########.fr       */
+/*   Updated: 2025/07/24 18:26:28 by eelaine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ class AForm {
 		AForm(std::string name, int signGrade, int execGrade);
 		virtual ~AForm();
 		AForm(const AForm &copy);
-		AForm &operator=(const AForm &other);
+		AForm &operator=(const AForm &other) = delete;
 	
 		std::string getName() const;
 		int getSignGrade() const;

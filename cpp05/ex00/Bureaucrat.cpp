@@ -6,7 +6,7 @@
 /*   By: eelaine <eelaine@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/26 11:58:25 by eelaine           #+#    #+#             */
-/*   Updated: 2025/07/02 15:01:42 by eelaine          ###   ########.fr       */
+/*   Updated: 2025/07/24 17:55:57 by eelaine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,13 +31,6 @@ Bureaucrat::~Bureaucrat () {
 
 Bureaucrat::Bureaucrat(const Bureaucrat &copy) : name_(copy.name_), grade_(copy.grade_) {
 	std::cout << "Copy constructor called for " << name_ << "\n";
-}
-
-Bureaucrat& Bureaucrat::operator=(const Bureaucrat &other) {
-	if (this != &other) {
-		grade_ = other.grade_;
-	}
-	return *this;
 }
 
 void Bureaucrat::increaseGrade(int amount) {

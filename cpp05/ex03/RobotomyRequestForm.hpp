@@ -6,7 +6,7 @@
 /*   By: eelaine <eelaine@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/03 14:16:03 by eelaine           #+#    #+#             */
-/*   Updated: 2025/07/03 16:19:49 by eelaine          ###   ########.fr       */
+/*   Updated: 2025/07/24 18:27:28 by eelaine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ class RobotomyRequestForm : public AForm {
 		RobotomyRequestForm(std::string target);
 		~RobotomyRequestForm();
 		RobotomyRequestForm(const RobotomyRequestForm &copy);
-		RobotomyRequestForm &operator=(const RobotomyRequestForm &other);
+		RobotomyRequestForm &operator=(const RobotomyRequestForm &other) = delete;
 		
 		void formExecuted() const override;
 };

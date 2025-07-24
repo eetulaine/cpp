@@ -6,7 +6,7 @@
 /*   By: eelaine <eelaine@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/02 14:14:23 by eelaine           #+#    #+#             */
-/*   Updated: 2025/07/07 13:46:13 by eelaine          ###   ########.fr       */
+/*   Updated: 2025/07/24 18:11:43 by eelaine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,13 +32,6 @@ AForm::~AForm() {
 AForm::AForm(const AForm &copy) : 
 	name_(copy.name_), signed_(copy.signed_), signGrade_(copy.signGrade_), execGrade_(copy.execGrade_) {
 	std::cout << "Copy constructor called for " << name_ << "\n";
-}
-
-AForm& AForm::operator=(const AForm &other) {
-	if (this != &other) {
-		signed_ = other.signed_;
-	}
-	return *this;
 }
 
 void AForm::beSigned(const Bureaucrat &bureaucrat) {

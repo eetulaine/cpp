@@ -6,7 +6,7 @@
 /*   By: eelaine <eelaine@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/26 11:58:04 by eelaine           #+#    #+#             */
-/*   Updated: 2025/07/03 14:58:20 by eelaine          ###   ########.fr       */
+/*   Updated: 2025/07/24 18:26:36 by eelaine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ class Bureaucrat {
 		Bureaucrat();
 		Bureaucrat(const std::string name, int grade);
 		Bureaucrat(const Bureaucrat &copy);
-		Bureaucrat &operator=(const Bureaucrat &other);
+		Bureaucrat &operator=(const Bureaucrat &other) = delete;
 		~Bureaucrat();
 
 		void increaseGrade(int amount);
