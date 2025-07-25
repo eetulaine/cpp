@@ -6,7 +6,7 @@
 /*   By: eelaine <eelaine@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/26 11:57:18 by eelaine           #+#    #+#             */
-/*   Updated: 2025/07/15 12:03:59 by eelaine          ###   ########.fr       */
+/*   Updated: 2025/07/25 16:48:33 by eelaine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,10 +44,10 @@ int	main() {
 		std::cout << "\n=== ROBOTOMY REQUEST FORM TESTS ===\n";
 
 		std::cout << "\nCreating a new RobotomyRequestForm..\n";
-		RobotomyRequestForm robotForm01("Bender");
+		RobotomyRequestForm robotForm01("R2D2");
 
 		std::cout << "\nCreating a high-ranking bureaucrat..\n";
-		Bureaucrat highRank("Dr. Zoidberg", 1);
+		Bureaucrat highRank("Obi-Wan Kenobi", 1);
 
 		std::cout << "\nTrying to execute unsigned form..\n";
 		highRank.executeForm(robotForm01);
@@ -55,27 +55,27 @@ int	main() {
 		std::cout << "\nSigning the form..\n";
 		highRank.signForm(robotForm01);
 
-		std::cout << "\nExecuting signed form (should make drilling noises and have 50% success rate)..\n";
+		std::cout << "\nExecuting signed form (drilling noises and 50% success rate)..\n";
 		highRank.executeForm(robotForm01);
 		highRank.executeForm(robotForm01);
 		highRank.executeForm(robotForm01);
 		highRank.executeForm(robotForm01);
 
 		std::cout << "\nCreating a bureaucrat with exactly sign grade (72)..\n";
-		Bureaucrat signGrade("Hermes", 72);
-		RobotomyRequestForm robotForm02("Fry");
+		Bureaucrat signGrade("Randy", 72);
+		RobotomyRequestForm robotForm02("Bleep");
 		signGrade.signForm(robotForm02);
 
-		std::cout << "\nTrying to execute with sign-grade bureaucrat (should fail - needs grade 45)..\n";
+		std::cout << "\nTrying to execute with low grade bureaucrat..\n";
 		signGrade.executeForm(robotForm02);
 
-		std::cout << "\nCreating a bureaucrat with exactly execute grade (45)..\n";
-		Bureaucrat executeGrade("Professor Farnsworth", 45);
+		std::cout << "\nCreating a bureaucrat with exactly exec grade...\n";
+		Bureaucrat executeGrade("Professor Blurp", 45);
 		executeGrade.executeForm(robotForm02);
 
 		std::cout << "\nCreating a low-ranking bureaucrat..\n";
 		Bureaucrat lowRank("Scruffy", 100);
-		RobotomyRequestForm robotForm03("Leela");
+		RobotomyRequestForm robotForm03("Blank");
 
 		std::cout << "\nTrying to sign with insufficient grade..\n";
 		lowRank.signForm(robotForm03);
@@ -89,7 +89,7 @@ int	main() {
 		ShrubberyCreationForm shrubForm01("home");
 
 		std::cout << "\nCreating a high-ranking bureaucrat..\n";
-		Bureaucrat highRank2("Lrrr", 1);
+		Bureaucrat highRank2("X183", 1);
 
 		std::cout << "\nTrying to execute unsigned form..\n";
 		highRank2.executeForm(shrubForm01);
@@ -101,19 +101,19 @@ int	main() {
 		highRank2.executeForm(shrubForm01);
 
 		std::cout << "\nCreating a bureaucrat with exactly sign grade (145)..\n";
-		Bureaucrat signGrade2("Zapp Brannigan", 145);
+		Bureaucrat signGrade2("Zippo", 145);
 		ShrubberyCreationForm shrubForm02("office");
 		signGrade2.signForm(shrubForm02);
 
-		std::cout << "\nTrying to execute with sign-grade bureaucrat (should fail - needs grade 137)..\n";
+		std::cout << "\nTrying to execute with low grade bureaucrat..\n";
 		signGrade2.executeForm(shrubForm02);
 
-		std::cout << "\nCreating a bureaucrat with exactly execute grade (137)..\n";
-		Bureaucrat executeGrade2("Kif", 137);
+		std::cout << "\nCreating a bureaucrat with exactly exec grade..\n";
+		Bureaucrat executeGrade2("Michael", 137);
 		executeGrade2.executeForm(shrubForm02);
 
 		std::cout << "\nCreating a low-ranking bureaucrat..\n";
-		Bureaucrat lowRank2("Nixon", 150);
+		Bureaucrat lowRank2("Flappy", 150);
 		ShrubberyCreationForm shrubForm03("garden");
 
 		std::cout << "\nTrying to sign with insufficient grade..\n";
@@ -126,8 +126,6 @@ int	main() {
 		ShrubberyCreationForm shrubForm04("park");
 		highRank2.signForm(shrubForm04);
 		highRank2.executeForm(shrubForm04);
-
-		std::cout << "\nTesting file creation - check for 'home_shrubbery', 'office_shrubbery', and 'park_shrubbery' files\n";
 
 		std::cout << "\n=== INTERN TESTS ===\n";
 
@@ -157,7 +155,7 @@ int	main() {
 
 		highRankingGuy.executeForm(*form2);
 		std::cout << std::endl;
-		delete form;
+		delete form2;
 
 		std::cout << "\n=== CLEANING.. ===\n\n";
     } catch (std::exception &e) {
