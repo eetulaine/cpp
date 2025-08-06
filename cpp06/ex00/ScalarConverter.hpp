@@ -6,7 +6,7 @@
 /*   By: eelaine <eelaine@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/06 11:23:46 by eelaine           #+#    #+#             */
-/*   Updated: 2025/08/06 15:01:05 by eelaine          ###   ########.fr       */
+/*   Updated: 2025/08/06 15:26:10 by eelaine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,8 @@ class ScalarConverter {
 	private: 
 
 		ScalarConverter() = delete;
-		ScalarConverter(const std::string &copy) = delete;
-		ScalarConverter &operator=(const std::string &other) = delete;
+		ScalarConverter(const ScalarConverter &copy) = delete;
+		ScalarConverter &operator=(const ScalarConverter &other) = delete;
 		~ScalarConverter() = delete;
 
 	public:
