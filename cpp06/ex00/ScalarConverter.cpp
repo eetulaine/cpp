@@ -6,7 +6,7 @@
 /*   By: eelaine <eelaine@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/06 11:30:39 by eelaine           #+#    #+#             */
-/*   Updated: 2025/08/06 14:24:46 by eelaine          ###   ########.fr       */
+/*   Updated: 2025/08/07 10:09:32 by eelaine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -147,7 +147,9 @@ void printImpossible() {
 }
 
 void ScalarConverter::convert(const std::string &input) {
+
 	try {
+	
 		Type type = checkInputType(input);
 		if (type == SPECIAL)
 			return printSpecial(input);
@@ -160,6 +162,7 @@ void ScalarConverter::convert(const std::string &input) {
 		if (type == DOUBLE)
 			return printDouble(input);
 		return printImpossible();
+	
 	} catch (const std::exception &e) {
 		std::cout << "Not possible: " << e.what() << std::endl;
 	}
