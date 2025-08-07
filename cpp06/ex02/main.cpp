@@ -6,7 +6,7 @@
 /*   By: eelaine <eelaine@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/07 10:36:26 by eelaine           #+#    #+#             */
-/*   Updated: 2025/08/07 12:15:58 by eelaine          ###   ########.fr       */
+/*   Updated: 2025/08/07 15:54:56 by eelaine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,16 @@
 #include "C.hpp"
 
 #include <iostream>
+#include <random>
 
 Base *generate() {
 
-	int random = rand() % 3;
+	static std::random_device rd;
+	static std::mt19937 gen(rd());
+	static std::uniform_int_distribution<> dis(0, 2);	
 	
+	int random = dis(gen);
+
 	if (random == 0) {
 		std::cout << "Generating A...\n";
 		return new A;
@@ -71,4 +76,16 @@ void identify(Base& p) {
 	}
 	catch(...) {}
 	std::cout << "Ref: Unknown\n";
+}
+
+int main() {
+
+	Base* base = generate();
+
+	identify(base);
+	identify(*base);
+
+	delete base;
+
+	return 0;
 }
