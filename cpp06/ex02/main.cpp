@@ -6,7 +6,7 @@
 /*   By: eelaine <eelaine@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/07 10:36:26 by eelaine           #+#    #+#             */
-/*   Updated: 2025/08/07 15:54:56 by eelaine          ###   ########.fr       */
+/*   Updated: 2025/08/08 10:26:27 by eelaine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,16 +26,17 @@ Base *generate() {
 	
 	int random = dis(gen);
 
+	std::cout << "Randomly generating A, B or C...\n";
 	if (random == 0) {
-		std::cout << "Generating A...\n";
+		std::cout << "A\n";
 		return new A;
 	}
 	if (random == 1) {
-		std::cout << "Generating B...\n";
+		std::cout << "B\n";
 		return new B;
 	}
 	else {
-		std::cout << "Generating C...\n";
+		std::cout << "C\n";
 		return new C;
 	}
 }
